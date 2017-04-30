@@ -1,0 +1,30 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: PDFSyntax
+scopeName: source.PDFSyntax
+fileTypes: [pdf]
+uuid: 02cfa9d7-2c7c-48d8-8df2-57029d6c08a6
+
+patterns:
+- comment: ref obj
+  name: keyword.other.PDFSyntax
+  match: (\d+ \d+) R
+  captures:
+    '1': {name: constant.numeric.PDFSyntax}
+
+- begin: (\d+ \d+) (obj)
+  beginCaptures:
+    '1': {name: constant.numeric.PDFSyntax}
+    '2': {name: keyword.other.PDFSyntax}
+  end: (endobj)
+  endCaptures:
+    '1': {name: keyword.other.PDFSyntax}
+  patterns:
+  - include: $self
+
+- comment: name object
+  name: keyword.other.PDFSyntax
+  match: /s+
+  captures:
+    '1': {name: constant.numeric.PDFSyntax}
+...

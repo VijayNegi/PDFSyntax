@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>pdf</string>
+	</array>
+	<key>name</key>
+	<string>PDFSyntax</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.PDFSyntax</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>ref obj</string>
+			<key>match</key>
+			<string>(\d+ \d+) R</string>
+			<key>name</key>
+			<string>keyword.other.PDFSyntax</string>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(\d+ \d+) (obj)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.PDFSyntax</string>
+				</dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.PDFSyntax</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(endobj)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.other.PDFSyntax</string>
+				</dict>
+			</dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>source.PDFSyntax</string>
+	<key>uuid</key>
+	<string>02cfa9d7-2c7c-48d8-8df2-57029d6c08a6</string>
+</dict>
+</plist>
